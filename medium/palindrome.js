@@ -4,13 +4,17 @@
 */
 
 function isPalindrome(str) {
-  
-let newstr = str.reverse;
-  if(newstr === str){
-    return true 
+  // Convert the string to lowercase for case-insensitive comparison
+  const lowerCaseStr = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+
+  // Reverse the string
+  const reversedStr = lowerCaseStr.split('').reverse().join('');
+
+  // Check if the reversed string is equal to the original string
+  if (lowerCaseStr === reversedStr){
+    return true
   }
- return false; 
- 
+  return false;
 }
 
 module.exports = isPalindrome;
